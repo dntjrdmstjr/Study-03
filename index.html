@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상식 퀴즈</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <section id="start-screen">
+      <h1>상식 퀴즈</h1>
+      <p>한국사 · 과학 · 지리 · 예술문화<br>원하는 모드를 골라 도전해 보세요!</p>
+      <div id="mode-select" class="modes">
+        <button class="mode-btn" data-mode="all"><strong>전체 도전</strong><small>4개 분야 20문제</small></button>
+        <button class="mode-btn" data-mode="category"><strong>카테고리별</strong><small>분야 하나를 골라 5문제</small></button>
+        <button class="mode-btn" data-mode="speed"><strong>스피드 퀴즈</strong><small>문제당 15초 · 힌트 사용 시 감점</small></button>
+      </div>
+      <div id="category-select" class="hidden">
+        <p>분야를 선택하세요</p>
+        <div class="cat-grid">
+          <button class="cat-btn" data-category="한국사">한국사</button>
+          <button class="cat-btn" data-category="과학">과학</button>
+          <button class="cat-btn" data-category="지리">지리</button>
+          <button class="cat-btn" data-category="예술문화">예술문화</button>
+        </div>
+        <button id="back-btn" class="secondary">← 모드 선택</button>
+      </div>
+    </section>
+
+    <section id="quiz-screen" class="hidden">
+      <div class="top">
+        <span id="category" class="badge"></span>
+        <span id="timer" class="timer hidden"></span>
+        <span id="progress-text"></span>
+      </div>
+      <div class="progress"><div id="progress-bar"></div></div>
+      <h2 id="question"></h2>
+      <div id="choices"></div>
+      <button id="hint-btn" class="hint hidden">💡 힌트: 오답 2개 제거 (-5점)</button>
+      <p id="feedback"></p>
+      <button id="next-btn" class="primary hidden">다음 문제</button>
+    </section>
+
+    <section id="result-screen" class="hidden">
+      <h1>퀴즈 완료!</h1>
+      <span id="result-mode" class="badge"></span>
+      <p class="score"><span id="score"></span> / <span id="total"></span></p>
+      <p id="points" class="points hidden"></p>
+      <p id="message"></p>
+      <ul id="category-scores"></ul>
+      <button id="restart-btn" class="primary">다시 시작</button>
+      <button id="home-btn" class="secondary">모드 선택</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
